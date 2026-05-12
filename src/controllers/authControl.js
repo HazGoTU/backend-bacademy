@@ -42,7 +42,7 @@ exports.verifyEmail = async (req,res) =>{
         const payload = verifyEmailToken(token)
         const user = await User.findByPk(payload.id)
         if(!user) return res.status(400).json({message: 'invalid token'})
-        
+      
         user.isVerified = true
         await user.save()
         res.json({

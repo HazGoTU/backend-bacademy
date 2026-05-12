@@ -19,16 +19,18 @@ module.exports = (sequelize)=>{
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        thumbnail_url:{
+        image_url:{
+            type: DataTypes.STRING
+        },
+        image_public_id:{
             type: DataTypes.STRING
         },
         categoryId:{
             type: DataTypes.INTEGER,
             allowNull: false
         }
-
-
-    },{
+    },
+    {
         tableName: 'courses'
     })
 

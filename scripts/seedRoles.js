@@ -2,7 +2,7 @@ const {sequelize, Role} = require('../src/models');
 
 (    async ()=>{
         await sequelize.sync();
-        const roles = ['admin','user','staff']
+        const roles = ['admin','user','super_admin']
         for (const name of roles){
             await Role.findOrCreate({
                 where: {name}

@@ -4,12 +4,15 @@ const sequelize = new Sequelize(config.database,config.username,config.password,
 
 const User = require('./user')(sequelize)
 const Role = require('./role')(sequelize)
-const Course = require('./course')(sequelize)
-const Enroll = require('./enrollment')(sequelize)
-const Category = require('./category')(sequelize)
-const Payment = require('./payment')(sequelize)
 const UserRole = require('./userRole')(sequelize)
-
+//
+const Enroll = require('./enrollment')(sequelize)
+const Payment = require('./payment')(sequelize)
+//
+const Category = require('./category')(sequelize)
+const Course = require('./course')(sequelize)
+const Chapter = require('./chapter')(sequelize)
+const Part = require('./partOf_')(sequelize)
 
 //For Table Relation
 User.belongsToMany(Role,{
@@ -31,14 +34,22 @@ Enroll.belongsTo(Payment,{foreignKey: 'paymentId'})
 // 
 Category.hasMany(Course,{foreignKey: 'categoryId'})
 Course.belongsTo(Category,{foreignKey: 'categoryId'})
-
+//
+Course.hasMany(Chapter,{foreignKey: 'courseId'})
+Chapter.belongsTo(Course,{foreignKey: 'courseId'})
+//
+Chapter.hasMany(Part,{foreignKey: 'chapterId'})
+Part.belongsTo(Chapter,{foreignKey: 'chapterId'})
 
 
 module.exports={
     sequelize,
     User,
     Role,
+    UserRole,
     Course,
+    Chapter,
+    Part,
     Enroll,
     Category,
     Payment

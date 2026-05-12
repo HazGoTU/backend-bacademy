@@ -4,12 +4,12 @@ require('dotenv').config();
 
 // console.log(process.env)
 const transporter = nodemailer.createTransport({
-    host: 'smtp.mailersend.net',
+    host: "smtp.gmail.com",
     port: 587,
     secure: false,
     auth: {
-        user: 'MS_QHs9p4@test-68zxl2731p94j905.mlsender.net',
-        pass: 'mssp.J9ytHwN.3zxk54vxnx1gjy6v.OetzIxw',
+        user: 'statebacademy@gmail.com',
+        pass: 'lwjysvkznpfxdzxp',
     }
 });
 transporter.verify((error, succes)=>{
@@ -23,9 +23,9 @@ transporter.verify((error, succes)=>{
 
 exports.sendVerificationEmail = async(targetMail, token)=>{
     console.log(targetMail)
-    const verifyUrl = `http://localhost:3000/api/auth/verify-email?token=${token}`
+    const verifyUrl = ` http://localhost:3000/auth/verify-email?token=${token}`
     const mailOptions = {
-    from: `<${process.env.SMTP_USER}>`,
+    from: process.env.SMTP_USER,
     to: targetMail,
     subject: 'Verifikasi Akun Anda',
     html:`

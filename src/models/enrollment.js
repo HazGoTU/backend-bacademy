@@ -1,5 +1,4 @@
 const {DataTypes} = require('sequelize')
-const { sequelize } = require('.')
 const payment = require('./payment')
 
 module.exports = (sequelize)=>{
