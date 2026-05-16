@@ -3,8 +3,8 @@ const { DataTypes } = require('sequelize')
 module.exports = (sequelize)=>{
     const Part = sequelize.define('Part',{
         id:{
-            type: DataTypes.UUID,
-            defualtValue: DataTypes.UUIDV4,
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
         },
         title:{
@@ -13,7 +13,6 @@ module.exports = (sequelize)=>{
         },
         chapterId:{
             type: DataTypes.INTEGER,
-            allowNull: false,
         },
         content:{
             type: DataTypes.STRING,

@@ -1,0 +1,17 @@
+[{
+    "course1":{
+        "title": "Kimia Dasar",
+        "description" : "Course ini adalah pembeljaran yang membantu anda memahami ilmu kimia",
+        "chapter":{
+            "title":"Introduction",
+            "part": {
+                "title":"Apa Itu Kimia",
+                "content":"Kimia adalah ilmu yang mempelajari keseluruhan materi penyusun alam semesta"
+            } 
+        }
+    },
+    "course2":{
+        "title": "",
+        "description" : ""
+    }
+}]

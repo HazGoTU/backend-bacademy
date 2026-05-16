@@ -12,4 +12,3 @@ const {sequelize, Role} = require('../src/models');
         process.exit(0)
     }
 )();
-

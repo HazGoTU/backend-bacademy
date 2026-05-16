@@ -12,7 +12,7 @@ const Payment = require('./payment')(sequelize)
 const Category = require('./category')(sequelize)
 const Course = require('./course')(sequelize)
 const Chapter = require('./chapter')(sequelize)
-const Part = require('./partOf_')(sequelize)
+const Part = require('./part')(sequelize)
 
 //For Table Relation
 User.belongsToMany(Role,{
